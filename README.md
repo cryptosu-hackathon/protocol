@@ -19,7 +19,7 @@ This will spin up the local node and list 20 local wallet address with their pri
 ## Contract Deployment,
 - ### Local node  
 
-	- Run the following command to deploy faucet on localhost 
+	- Run the following command to deploy contract on localhost 
 
 		`npx hardhat run scripts/deploy.js --network localhost`  
 
@@ -47,6 +47,6 @@ This will spin up the local node and list 20 local wallet address with their pri
 
 			Process should be similar with other wallets.  
 
-	- Run the following command to deploy faucet on rinkeby network 
+	- Run the following command to deploy contract on rinkeby network 
 
 		`npx hardhat run scripts/deploy.js --network rinkeby`
