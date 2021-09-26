@@ -10,7 +10,7 @@ contract Player is ERC721URIStorage {
 
     constructor() ERC721("Player", "PLAY") {}
 
-    function signUp()
+    function signUp(string memory userName)
         public
         returns (uint256)
     {
@@ -19,25 +19,19 @@ contract Player is ERC721URIStorage {
 
         uint256 newItemId = _tokenIds.current();
         _mint(msg.sender, newItemId);
-        _setTokenURI(newItemId, tokenURITemplate(msg.sender));
+        _setTokenURI(newItemId, tokenURITemplate(userName));
 
         return newItemId;
     }
 
-    function tokenURI(uint256 tokenId) override public view returns (string memory) {
-        address tokenOwner = ownerOf(tokenId);  
-        return tokenURITemplate(tokenOwner);
-    }
-
-
-     function tokenURITemplate(address tokenOwner) private view returns (string memory) {
+     function tokenURITemplate(string memory userName) private view returns (string memory) {
         string[4] memory parts;
        
-        parts[0] = '<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet" viewBox="0 0 350 350"><style>.base { fill: Gray; font-family: serif; font-size: 14px; }</style><rect width="100%" height="100%" fill="white" />';
+        parts[0] = '<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet" viewBox="0 0 350 350" style="border:5px solid gray"><style>.base { fill: Gray; font-family: serif; font-size: 14px; }</style><rect width="100%" height="100%" fill="white" />';
        
         parts[1] = '<text x="10" y="20" class="base">Player: ';
 
-        parts[2] = string(abi.encodePacked(tokenOwner));      
+        parts[2] = userName;      
 
         parts[3] = '</text></svg>';
 
