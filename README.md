@@ -8,7 +8,7 @@ We believe the outlines of this project can be reused on existing games with a l
 
 # Design
 ![Sans-titre-2021-09-22-1246](https://user-images.githubusercontent.com/43751434/136706347-10f86230-875b-4730-b8ea-fc13afaa7586.png)
-[Uploading Sans-titre-2021-09-22-0913 (1).excalidraw…]()
+[Uploading Sans-titre-2021-09-22-0913 (1).excalidraw…](Excalidraw file for the above diagram)
 
 
 # Additional repos
